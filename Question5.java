@@ -26,7 +26,34 @@ public class Question5
      * Hint: Use a loop to get input. Use another 2 loops to find the mode
      */
      
-    Scanner in = new Scanner(System.in);
+    Scanner In = new Scanner(System.in);
+		int numInt = In.nextInt();
+		
+		int numArr[] = new int[numInt];
+		int count = 0;
+		
+		do {
+			int num = In.nextInt();
+			numArr[count] = num;
+			count++;
+		}while(count != numInt);
+		
+		int maxcount = 0;
+		int modenum = 0;
+		
+		for(int i = 0; i < numInt; i++) {
+			int dupecount = 0;
+			for(int x = 0; x < numInt; x++) {
+				if (numArr[i] == numArr[x]) {
+					dupecount++;
+				}
+			}
+			if (dupecount > maxcount) {
+				maxcount = dupecount;
+				modenum = numArr[i];
+			}
+		}
+		System.out.println(modenum);
     
   }
 }
