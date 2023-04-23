@@ -18,6 +18,11 @@ public class Question4
      */
      
     Scanner in = new Scanner(System.in);
-    
+	    int num = in.nextInt();
+	    String s = "*";
+	     do {
+	    	String s_multi = s.repeat(num);
+	    	System.out.println(s_multi);
+	    }while(num-- != 0);
   }
 }
